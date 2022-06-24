@@ -1,29 +1,5 @@
 <template>
   <div class="app-container">
-    <div class="filter-container">
-      <el-input v-model="listQuery.title" placeholder="Title" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
-      <el-select v-model="listQuery.importance" placeholder="Imp" clearable style="width: 90px" class="filter-item">
-        <el-option v-for="item in importanceOptions" :key="item" :label="item" :value="item" />
-      </el-select>
-      <el-select v-model="listQuery.type" placeholder="Type" clearable class="filter-item" style="width: 130px">
-        <el-option v-for="item in calendarTypeOptions" :key="item.key" :label="item.display_name+'('+item.key+')'" :value="item.key" />
-      </el-select>
-      <el-select v-model="listQuery.sort" style="width: 140px" class="filter-item" @change="handleFilter">
-        <el-option v-for="item in sortOptions" :key="item.key" :label="item.label" :value="item.key" />
-      </el-select>
-      <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">
-        Search
-      </el-button>
-      <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit" @click="handleCreate">
-        Add
-      </el-button>
-      <el-button v-waves :loading="downloadLoading" class="filter-item" type="primary" icon="el-icon-download" @click="handleDownload">
-        Export
-      </el-button>
-      <el-checkbox v-model="showReviewer" class="filter-item" style="margin-left:15px;" @change="tableKey=tableKey+1">
-        reviewer
-      </el-checkbox>
-    </div>
 
     <el-table
       :key="tableKey"
@@ -50,19 +26,64 @@
           <span>{{ row.share_limit }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AtrRatio" width="80px" align="center">
+      <el-table-column label="TradeUnit" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.trade_unit }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="AtrLen" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.atr_len }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="AtrRatio" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_ratio }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AtrUpperRatio" width="120px" align="center">
+      <el-table-column label="AtrUpper" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_upper_ratio }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AtrLowerRatio" width="120px" align="center">
+      <el-table-column label="AtrLower" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_lower_ratio }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="OverBuy" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.over_buy }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="AliveLine" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.alive_line }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="DeadLine" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.dead_line }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="OverSell" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.over_sell }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="SwingDo" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.swing_do }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="SwingKeep" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.swing_keep }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="XDXR" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.xdxr }}</span>
         </template>
       </el-table-column>
       <el-table-column label="Actions" align="center" width="230" class-name="small-padding fixed-width">
@@ -87,14 +108,41 @@
         <el-form-item label="ShareLimit" prop="share_limit">
           <el-input v-model="temp.share_limit" />
         </el-form-item>
+        <el-form-item label="TradeUnit" prop="trade_unit">
+          <el-input v-model="temp.trade_unit" />
+        </el-form-item>
+        <el-form-item label="AtrLen" prop="atr_len">
+          <el-input v-model="temp.atr_len" />
+        </el-form-item>
         <el-form-item label="AtrRatio" prop="atr_ratio">
           <el-input v-model="temp.atr_ratio" />
         </el-form-item>
-        <el-form-item label="AtrUpperRatio" prop="atr_upper_ratio">
+        <el-form-item label="AtrUpper" prop="atr_upper_ratio">
           <el-input v-model="temp.atr_upper_ratio" />
         </el-form-item>
-        <el-form-item label="AtrLowerRatio" prop="atr_lower_ratio">
+        <el-form-item label="AtrLower" prop="atr_lower_ratio">
           <el-input v-model="temp.atr_lower_ratio" />
+        </el-form-item>
+        <el-form-item label="OverBuy" prop="over_buy">
+          <el-input v-model="temp.over_buy" />
+        </el-form-item>
+        <el-form-item label="AliveLine" prop="alive_line">
+          <el-input v-model="temp.alive_line" />
+        </el-form-item>
+        <el-form-item label="DeadLine" prop="dead_line">
+          <el-input v-model="temp.dead_line" />
+        </el-form-item>
+        <el-form-item label="OverSell" prop="over_sell">
+          <el-input v-model="temp.over_sell" />
+        </el-form-item>
+        <el-form-item label="SwingDo" prop="swing_do">
+          <el-input v-model="temp.swing_do" />
+        </el-form-item>
+        <el-form-item label="SwingKeep" prop="swing_keep">
+          <el-input v-model="temp.swing_keep" />
+        </el-form-item>
+        <el-form-item label="XDXR" prop="xdxr">
+          <el-input v-model="temp.xdxr" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
