@@ -9,6 +9,8 @@
       fit
       highlight-current-row
       style="width: 100%;"
+      :header-cell-style="{'background-color': '#2f75b5', 'color': '#ffffff', 'border': '1px dashed #0F0A3B !important'}"
+      :cell-style="changeCellStyle"
       @sort-change="sortChange"
     >
       <el-table-column label="Code" prop="code" sortable="custom" align="center" width="80" :class-name="getSortClass('code')">
@@ -254,6 +256,34 @@ export default {
     this.getList()
   },
   methods: {
+    changeCellStyle(row, column, rowIndex, columnIndex) {
+      if (row.column.label=== 'Code') {
+        return {
+          'background-color': '#ffe699',
+          'border': '1px dashed #0F0A3B !important'
+        }
+      } else if (row.column.label=== 'AtrRatio' || row.column.label=== 'AtrUpper' || row.column.label=== 'AtrLower') {
+        return {
+          'background-color': '#ddebf7',
+          'border': '1px dashed #0F0A3B !important'
+        }
+      } else if (row.column.label=== 'OverBuy' || row.column.label=== 'AliveLine' || row.column.label=== 'DeadLine' || row.column.label=== 'OverSell') {
+        return {
+          'background-color': '#f8cbad',
+          'border': '1px dashed #0F0A3B !important'
+        }
+      } else if (row.column.label=== 'XDXR' || row.column.label=== 'AtrUpper' || row.column.label=== 'AtrLower') {
+        return {
+          'background-color': '#c6e0b4',
+          'border': '1px dashed #0F0A3B !important'
+        }
+      } else {
+        return {
+          'background-color': '#fafafa',
+          'border': '1px dashed #0F0A3B !important'
+        }
+      }
+    },
     getList() {
       this.listLoading = true
       fetchList(this.listQuery).then(response => {
