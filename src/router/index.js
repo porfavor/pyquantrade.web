@@ -103,6 +103,18 @@ export const asyncRoutes = [
     ]
   },
   {
+    path: '/trade',
+    component: Layout,
+    children: [
+      {
+        path: 'position',
+        component: () => import('@/views/trade/position'),
+        name: 'Position',
+        meta: { title: 'Position', icon: 'table', affix: true }
+      }
+    ]
+  },
+  {
     path: '/icon',
     component: Layout,
     children: [

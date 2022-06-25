@@ -170,7 +170,7 @@
 </template>
 
 <script>
-import { fetchList, fetchPv, createParameter, updateParameter } from '@/api/trade-parameter'
+import { fetchParameter, updateParameter } from '@/api/parameter'
 import waves from '@/directive/waves' // waves directive
 import { parseTime } from '@/utils'
 import Pagination from '@/components/Pagination'
@@ -286,7 +286,7 @@ export default {
     },
     getList() {
       this.listLoading = true
-      fetchList(this.listQuery).then(response => {
+      fetchParameter(this.listQuery).then(response => {
         this.list = response.data.items
         this.total = response.data.total
 
