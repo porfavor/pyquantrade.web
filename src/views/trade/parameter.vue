@@ -13,7 +13,7 @@
       :cell-style="changeCellStyle"
       @sort-change="sortChange"
     >
-      <el-table-column label="Code" prop="code" sortable="custom" align="center" width="80" :class-name="getSortClass('code')">
+      <el-table-column label="Code" prop="code" sortable="custom" align="center" width="120px" :class-name="getSortClass('code')">
         <template slot-scope="{row}">
           <span class="link-type" @click="handleUpdate(row)">{{ row.code }}</span>
         </template>
