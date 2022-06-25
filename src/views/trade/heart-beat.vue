@@ -15,84 +15,12 @@
     >
       <el-table-column label="Code" prop="code" sortable="custom" align="center" width="120px" :class-name="getSortClass('code')">
         <template slot-scope="{row}">
-          <span class="link-type" @click="handleUpdate(row)">{{ row.code }}</span>
+          <span>{{ row.code }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="LongShort" width="100px" align="center">
+      <el-table-column label="Beat" width="200px" align="center">
         <template slot-scope="{row}">
-          <span>{{ row.long_short }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="ShareLimit" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.share_limit }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="TradeUnit" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.trade_unit }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="AtrLen" width="80px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.atr_len }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="AtrRatio" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.atr_ratio }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="AtrUpper" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.atr_upper_ratio }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="AtrLower" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.atr_lower_ratio }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="OverBuy" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.over_buy }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="AliveLine" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.alive_line }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="DeadLine" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.dead_line }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="OverSell" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.over_sell }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="SwingDo" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.swing_do }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="SwingKeep" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.swing_keep }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="XDXR" width="100px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.xdxr }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="Actions" align="center" width="230" class-name="small-padding fixed-width">
-        <template slot-scope="{row,$index}">
-          <el-button type="primary" size="mini" @click="handleUpdate(row)">
-            Edit
-          </el-button>
+          <span>{{ row.beat }}</span>
         </template>
       </el-table-column>
     </el-table>
@@ -104,47 +32,8 @@
         <el-form-item label="Code" prop="code">
           <el-input v-model="temp.code" disabled="true" />
         </el-form-item>
-        <el-form-item label="LongShort" prop="long_short">
-          <el-input v-model="temp.long_short" />
-        </el-form-item>
-        <el-form-item label="ShareLimit" prop="share_limit">
-          <el-input v-model="temp.share_limit" />
-        </el-form-item>
-        <el-form-item label="TradeUnit" prop="trade_unit">
-          <el-input v-model="temp.trade_unit" />
-        </el-form-item>
-        <el-form-item label="AtrLen" prop="atr_len">
-          <el-input v-model="temp.atr_len" />
-        </el-form-item>
-        <el-form-item label="AtrRatio" prop="atr_ratio">
-          <el-input v-model="temp.atr_ratio" />
-        </el-form-item>
-        <el-form-item label="AtrUpper" prop="atr_upper_ratio">
-          <el-input v-model="temp.atr_upper_ratio" />
-        </el-form-item>
-        <el-form-item label="AtrLower" prop="atr_lower_ratio">
-          <el-input v-model="temp.atr_lower_ratio" />
-        </el-form-item>
-        <el-form-item label="OverBuy" prop="over_buy">
-          <el-input v-model="temp.over_buy" />
-        </el-form-item>
-        <el-form-item label="AliveLine" prop="alive_line">
-          <el-input v-model="temp.alive_line" />
-        </el-form-item>
-        <el-form-item label="DeadLine" prop="dead_line">
-          <el-input v-model="temp.dead_line" />
-        </el-form-item>
-        <el-form-item label="OverSell" prop="over_sell">
-          <el-input v-model="temp.over_sell" />
-        </el-form-item>
-        <el-form-item label="SwingDo" prop="swing_do">
-          <el-input v-model="temp.swing_do" />
-        </el-form-item>
-        <el-form-item label="SwingKeep" prop="swing_keep">
-          <el-input v-model="temp.swing_keep" />
-        </el-form-item>
-        <el-form-item label="XDXR" prop="xdxr">
-          <el-input v-model="temp.xdxr" />
+        <el-form-item label="Beat" prop="beat">
+          <el-input v-model="temp.beat" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -260,21 +149,6 @@ export default {
       if (row.column.label=== 'Code') {
         return {
           'background-color': '#ffe699',
-          'border': '1px dashed #0F0A3B !important'
-        }
-      } else if (row.column.label=== 'AtrRatio' || row.column.label=== 'AtrUpper' || row.column.label=== 'AtrLower') {
-        return {
-          'background-color': '#ddebf7',
-          'border': '1px dashed #0F0A3B !important'
-        }
-      } else if (row.column.label=== 'OverBuy' || row.column.label=== 'AliveLine' || row.column.label=== 'DeadLine' || row.column.label=== 'OverSell') {
-        return {
-          'background-color': '#f8cbad',
-          'border': '1px dashed #0F0A3B !important'
-        }
-      } else if (row.column.label=== 'XDXR') {
-        return {
-          'background-color': '#c6e0b4',
           'border': '1px dashed #0F0A3B !important'
         }
       } else {
