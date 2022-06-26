@@ -28,9 +28,11 @@
           <span>{{ row.beat }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Status" width="100px" align="center">
+      <el-table-column label="Condition" width="100px" align="center">
         <template slot-scope="{row}">
-          <span>{{ row.status }}</span>
+          <div :style="{ 'background-color': row.condition ==1 ? 'green' : 'red' }">
+            <span>{{ row.condition }}</span>
+          </div>
         </template>
       </el-table-column>
     </el-table>
@@ -161,7 +163,26 @@ export default {
           'background-color': '#ffe699',
           'border': '1px dashed #0F0A3B !important'
         }
-      } else {
+      }
+//      else if (row.column.label === 'Condition') {
+//          if (row.condition === 1){
+//            return {
+//              'background-color': '#2ac349',
+//              'border': '1px dashed #0F0A3B !important'
+//            }
+//          } else if (row.condition === 0) {
+//            return {
+//              'background-color': '#c72b2e',
+//              'border': '1px dashed #0F0A3B !important'
+//            }
+//          } else {
+//            return {
+//              'background-color': '#000000',
+//              'border': '1px dashed #0F0A3B !important'
+//            }
+//          }
+//      }
+      else {
         return {
           'background-color': '#fafafa',
           'border': '1px dashed #0F0A3B !important'
