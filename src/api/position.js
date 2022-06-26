@@ -8,3 +8,10 @@ export function fetchPosition(query) {
   })
 }
 
+export function updatePosition(data) {
+  return request({
+    url: 'http://127.0.0.1:5000/api/update_position',
+    method: 'post',
+    data
+  })
+}

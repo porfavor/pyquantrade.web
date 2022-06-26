@@ -110,7 +110,7 @@ export const asyncRoutes = [
         path: 'position',
         component: () => import('@/views/trade/position'),
         name: 'Position',
-        meta: { title: 'Position', icon: 'table', affix: true }
+        meta: { title: 'Position', icon: 'list', affix: true }
       }
     ]
   },

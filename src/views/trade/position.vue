@@ -33,7 +33,27 @@
           <span>{{ row.avg_filled }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="FilledDt" width="80px" align="center">
+      <el-table-column label="IntraHigh" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.intra_high }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="IntraLow" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.intra_low }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="StopLoss" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.stop_loss }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="StopProfit" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.stop_profit }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="FilledDt" width="300px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.filled_dt }}</span>
         </template>
@@ -54,47 +74,29 @@
         <el-form-item label="Code" prop="code">
           <el-input v-model="temp.code" disabled="true" />
         </el-form-item>
-        <el-form-item label="LongShort" prop="long_short">
-          <el-input v-model="temp.long_short" />
+        <el-form-item label="Shares" prop="shares">
+          <el-input v-model="temp.shares" />
         </el-form-item>
-        <el-form-item label="ShareLimit" prop="share_limit">
-          <el-input v-model="temp.share_limit" />
+        <el-form-item label="Available" prop="available">
+          <el-input v-model="temp.available" />
         </el-form-item>
-        <el-form-item label="TradeUnit" prop="trade_unit">
-          <el-input v-model="temp.trade_unit" />
+        <el-form-item label="AvgFilled" prop="avg_filled">
+          <el-input v-model="temp.avg_filled" />
         </el-form-item>
-        <el-form-item label="AtrLen" prop="atr_len">
-          <el-input v-model="temp.atr_len" />
+        <el-form-item label="IntraHigh" prop="intra_high">
+          <el-input v-model="temp.intra_high" />
         </el-form-item>
-        <el-form-item label="AtrRatio" prop="atr_ratio">
-          <el-input v-model="temp.atr_ratio" />
+        <el-form-item label="IntraLow" prop="intra_low">
+          <el-input v-model="temp.intra_low" />
         </el-form-item>
-        <el-form-item label="AtrUpper" prop="atr_upper_ratio">
-          <el-input v-model="temp.atr_upper_ratio" />
+        <el-form-item label="StopLoss" prop="stop_loss">
+          <el-input v-model="temp.stop_loss" />
         </el-form-item>
-        <el-form-item label="AtrLower" prop="atr_lower_ratio">
-          <el-input v-model="temp.atr_lower_ratio" />
+        <el-form-item label="StopProfit" prop="stop_profit">
+          <el-input v-model="temp.stop_profit" />
         </el-form-item>
-        <el-form-item label="OverBuy" prop="over_buy">
-          <el-input v-model="temp.over_buy" />
-        </el-form-item>
-        <el-form-item label="AliveLine" prop="alive_line">
-          <el-input v-model="temp.alive_line" />
-        </el-form-item>
-        <el-form-item label="DeadLine" prop="dead_line">
-          <el-input v-model="temp.dead_line" />
-        </el-form-item>
-        <el-form-item label="OverSell" prop="over_sell">
-          <el-input v-model="temp.over_sell" />
-        </el-form-item>
-        <el-form-item label="SwingDo" prop="swing_do">
-          <el-input v-model="temp.swing_do" />
-        </el-form-item>
-        <el-form-item label="SwingKeep" prop="swing_keep">
-          <el-input v-model="temp.swing_keep" />
-        </el-form-item>
-        <el-form-item label="XDXR" prop="xdxr">
-          <el-input v-model="temp.xdxr" />
+        <el-form-item label="FilledDt" prop="filled_dt">
+          <el-input v-model="temp.filled_dt" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -120,7 +122,7 @@
 </template>
 
 <script>
-import { fetchPosition } from '@/api/position'
+import { fetchPosition, updatePosition } from '@/api/position'
 import waves from '@/directive/waves' // waves directive
 import { parseTime } from '@/utils'
 import Pagination from '@/components/Pagination'
@@ -212,12 +214,12 @@ export default {
           'background-color': '#ffe699',
           'border': '1px dashed #0F0A3B !important'
         }
-      } else if (row.column.label=== 'AtrRatio' || row.column.label=== 'AtrUpper' || row.column.label=== 'AtrLower') {
+      } else if (row.column.label=== 'Shares' || row.column.label=== 'Available' || row.column.label=== 'AvgFilled') {
         return {
           'background-color': '#ddebf7',
           'border': '1px dashed #0F0A3B !important'
         }
-      } else if (row.column.label=== 'OverBuy' || row.column.label=== 'AliveLine' || row.column.label=== 'DeadLine' || row.column.label=== 'OverSell') {
+      } else if (row.column.label=== 'FilledDt' || row.column.label=== 'AliveLine' || row.column.label=== 'DeadLine' || row.column.label=== 'OverSell') {
         return {
           'background-color': '#f8cbad',
           'border': '1px dashed #0F0A3B !important'
@@ -322,7 +324,7 @@ export default {
         if (valid) {
           const tempData = Object.assign({}, this.temp)
           tempData.timestamp = +new Date(tempData.timestamp) // change Thu Nov 30 2017 16:41:05 GMT+0800 (CST) to 1512031311464
-          updateParameter(tempData).then(() => {
+          updatePosition(tempData).then(() => {
             const index = this.list.findIndex(v => v.code === this.temp.code)
             this.list.splice(index, 1, this.temp)
             this.dialogFormVisible = false
