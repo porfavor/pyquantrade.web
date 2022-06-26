@@ -53,17 +53,17 @@
           <span>{{ row.stop_profit }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="FilledDt" width="300px" align="center">
+      <el-table-column label="FilledDt" width="400px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.filled_dt }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="FilledDetail" width="300px" align="center">
+      <el-table-column label="FilledDetail" width="400px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.filled_detail }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="RecycleDetail" width="300px" align="center">
+      <el-table-column label="RecycleDetail" width="400px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.recycle_detail }}</span>
         </template>

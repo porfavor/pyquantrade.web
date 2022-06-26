@@ -18,9 +18,19 @@
           <span>{{ row.code }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="Price" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.price }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="Beat" width="200px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.beat }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Status" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.status }}</span>
         </template>
       </el-table-column>
     </el-table>
