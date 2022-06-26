@@ -58,6 +58,16 @@
           <span>{{ row.filled_dt }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="FilledDetail" width="300px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.filled_detail }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="RecycleDetail" width="300px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.recycle_detail }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="Actions" align="center" width="230" class-name="small-padding fixed-width">
         <template slot-scope="{row,$index}">
           <el-button type="primary" size="mini" @click="handleUpdate(row)">
@@ -97,6 +107,12 @@
         </el-form-item>
         <el-form-item label="FilledDt" prop="filled_dt">
           <el-input v-model="temp.filled_dt" />
+        </el-form-item>
+        <el-form-item label="FilledDetail" prop="filled_detail">
+          <el-input v-model="temp.filled_detail" />
+        </el-form-item>
+        <el-form-item label="RecycleDetail" prop="recycle_detail">
+          <el-input v-model="temp.recycle_detail" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
