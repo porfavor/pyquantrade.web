@@ -107,6 +107,18 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
+        path: 'risk',
+        component: () => import('@/views/trade/risk'),
+        name: 'Risk',
+        meta: { title: 'Risk', icon: 'eye-open', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/trade',
+    component: Layout,
+    children: [
+      {
         path: 'position',
         component: () => import('@/views/trade/position'),
         name: 'Position',
