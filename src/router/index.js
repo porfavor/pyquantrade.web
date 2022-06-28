@@ -95,10 +95,10 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
-        path: 'parameter',
-        component: () => import('@/views/trade/parameter'),
-        name: 'Parameter',
-        meta: { title: 'Parameter', icon: 'table', affix: true }
+        path: 'risk',
+        component: () => import('@/views/trade/risk'),
+        name: 'Risk',
+        meta: { title: 'Risk', icon: 'eye-open', affix: true }
       }
     ]
   },
@@ -107,10 +107,10 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
-        path: 'risk',
-        component: () => import('@/views/trade/risk'),
-        name: 'Risk',
-        meta: { title: 'Risk', icon: 'eye-open', affix: true }
+        path: 'parameter',
+        component: () => import('@/views/trade/parameter'),
+        name: 'Parameter',
+        meta: { title: 'Parameter', icon: 'table', affix: true }
       }
     ]
   },
