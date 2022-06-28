@@ -33,6 +33,11 @@
           <span>{{ row.trade_unit }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="Interval" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.interval }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="AtrLen" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_len }}</span>
@@ -112,6 +117,9 @@
         </el-form-item>
         <el-form-item label="TradeUnit" prop="trade_unit">
           <el-input v-model="temp.trade_unit" />
+        </el-form-item>
+        <el-form-item label="Interval" prop="trade_unit">
+          <el-input v-model="temp.interval" />
         </el-form-item>
         <el-form-item label="AtrLen" prop="atr_len">
           <el-input v-model="temp.atr_len" />
