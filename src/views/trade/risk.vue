@@ -162,29 +162,30 @@ export default {
   methods: {
     changeCellStyle(row, column, rowIndex, columnIndex) {
       if (row.column.label=== 'Code') {
-        return {
-          'background-color': '#ffe699',
-          'border': '1px dashed #0F0A3B !important'
+        if (row.row.code === 'Total') {
+          return {
+            'background-color': '#ffe699',
+            'border': '1px dashed #0F0A3B !important'
+          }
+        } else {
+          if (row.row.exp_pnl > 0) {
+            return {
+              'background-color': '#c6efce',
+              'border': '1px dashed #0F0A3B !important'
+            }
+          } else if (row.row.exp_pnl < 0) {
+            return {
+              'background-color': '#ffc7ce',
+              'border': '1px dashed #0F0A3B !important'
+            }
+          } else {
+            return {
+              'background-color': '#ffe699',
+              'border': '1px dashed #0F0A3B !important'
+            }
+          }
         }
       }
-//      else if (row.column.label === 'Condition') {
-//          if (row.condition === 1){
-//            return {
-//              'background-color': '#2ac349',
-//              'border': '1px dashed #0F0A3B !important'
-//            }
-//          } else if (row.condition === 0) {
-//            return {
-//              'background-color': '#c72b2e',
-//              'border': '1px dashed #0F0A3B !important'
-//            }
-//          } else {
-//            return {
-//              'background-color': '#000000',
-//              'border': '1px dashed #0F0A3B !important'
-//            }
-//          }
-//      }
       else {
         return {
           'background-color': '#fafafa',
