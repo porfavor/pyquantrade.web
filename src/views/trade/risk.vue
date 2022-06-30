@@ -181,35 +181,27 @@ export default {
       this.getList()
     },
     changeCellStyle(row, column, rowIndex, columnIndex) {
-      if (row.column.label=== 'Code') {
-        if (row.row.code === 'Total') {
+      if (row.row.code === 'Total') {
+        return {
+          'background-color': '#ffe699',
+          'border': '1px dashed #0F0A3B !important'
+        }
+      } else {
+        if (row.row.exp_pnl > 0) {
+          return {
+            'background-color': '#c6efce',
+            'border': '1px dashed #0F0A3B !important'
+          }
+        } else if (row.row.exp_pnl < 0) {
+          return {
+            'background-color': '#ffc7ce',
+            'border': '1px dashed #0F0A3B !important'
+          }
+        } else {
           return {
             'background-color': '#ffe699',
             'border': '1px dashed #0F0A3B !important'
           }
-        } else {
-          if (row.row.exp_pnl > 0) {
-            return {
-              'background-color': '#c6efce',
-              'border': '1px dashed #0F0A3B !important'
-            }
-          } else if (row.row.exp_pnl < 0) {
-            return {
-              'background-color': '#ffc7ce',
-              'border': '1px dashed #0F0A3B !important'
-            }
-          } else {
-            return {
-              'background-color': '#ffe699',
-              'border': '1px dashed #0F0A3B !important'
-            }
-          }
-        }
-      }
-      else {
-        return {
-          'background-color': '#fafafa',
-          'border': '1px dashed #0F0A3B !important'
         }
       }
     },
