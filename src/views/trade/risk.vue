@@ -79,6 +79,7 @@ import waves from '@/directive/waves' // waves directive
 import { parseTime } from '@/utils'
 import Pagination from '@/components/Pagination'
 import ElInput from '../../../node_modules/element-ui/packages/input/src/input.vue' // secondary package based on el-pagination
+import axios from "axios";
 
 const calendarTypeOptions = [
   { key: 'CN', display_name: 'China' },
@@ -159,7 +160,26 @@ export default {
   created() {
     this.getList()
   },
+  mounted() {
+    this.timer = setInterval(() => {
+      setTimeout(this.refresh, 0)
+    }, 10000)
+  },
+  beforeDestroy() {
+    clearInterval(this.timer);
+    this.timer = null;
+  },
   methods: {
+    refresh() {
+//      axios({
+//        url:'/#/trade/risk',
+//        method:'get',
+//      }).then(res=>{
+//        //成功回调
+//        console.log(res)
+//      })
+      this.getList()
+    },
     changeCellStyle(row, column, rowIndex, columnIndex) {
       if (row.column.label=== 'Code') {
         if (row.row.code === 'Total') {

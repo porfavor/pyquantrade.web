@@ -156,7 +156,19 @@ export default {
   created() {
     this.getList()
   },
+  mounted() {
+    this.timer = setInterval(() => {
+      setTimeout(this.refresh, 0)
+    }, 10000)
+  },
+  beforeDestroy() {
+    clearInterval(this.timer);
+    this.timer = null;
+  },
   methods: {
+    refresh() {
+      this.getList()
+    },
     changeCellStyle(row, column, rowIndex, columnIndex) {
       if (row.column.label=== 'Code') {
         return {
