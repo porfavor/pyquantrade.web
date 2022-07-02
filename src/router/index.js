@@ -107,6 +107,18 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
+        path: 'global',
+        component: () => import('@/views/trade/global'),
+        name: 'Global',
+        meta: { title: 'Global', icon: 'international', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/trade',
+    component: Layout,
+    children: [
+      {
         path: 'parameter',
         component: () => import('@/views/trade/parameter'),
         name: 'Parameter',
