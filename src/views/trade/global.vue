@@ -175,7 +175,7 @@ export default {
   mounted() {
     this.timer = setInterval(() => {
       setTimeout(this.refresh, 0)
-    }, 10000)
+    }, 60000)
   },
   beforeDestroy() {
     clearInterval(this.timer);
