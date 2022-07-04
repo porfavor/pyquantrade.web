@@ -78,6 +78,16 @@
           <span>{{ row.over_sell }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="MinsMa" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.mins_ma }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="MinsBoll" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.mins_boll }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="SwingDo" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.swing_do }}</span>
@@ -144,6 +154,12 @@
         </el-form-item>
         <el-form-item label="OverSell" prop="over_sell">
           <el-input v-model="temp.over_sell" />
+        </el-form-item>
+        <el-form-item label="MinsMa" prop="mins_ma">
+          <el-input v-model="temp.mins_ma" />
+        </el-form-item>
+        <el-form-item label="MinsBoll" prop="mins_boll">
+          <el-input v-model="temp.mins_boll" />
         </el-form-item>
         <el-form-item label="SwingDo" prop="swing_do">
           <el-input v-model="temp.swing_do" />
