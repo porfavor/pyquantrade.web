@@ -308,7 +308,7 @@ export default {
           'background-color': '#f8cbad',
           'border': '1px dashed #0F0A3B !important'
         }
-      } else if (row.column.label=== 'XDXR') {
+      } else if (row.column.label=== 'SwingDo' || row.column.label=== 'SwingKeep' || row.column.label=== 'XDXR') {
         return {
           'background-color': '#c6e0b4',
           'border': '1px dashed #0F0A3B !important'
