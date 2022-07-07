@@ -33,9 +33,19 @@
           <span>{{ row.trade_unit }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Interval" width="100px" align="center">
+      <el-table-column label="Interval" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.interval }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="MaShort" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.ma_short }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="MaLong" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.ma_long }}</span>
         </template>
       </el-table-column>
       <el-table-column label="AtrLen" width="80px" align="center">
@@ -43,7 +53,7 @@
           <span>{{ row.atr_len }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AtrRatio" width="100px" align="center">
+      <el-table-column label="AtrRatio" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_ratio }}</span>
         </template>
@@ -130,6 +140,12 @@
         </el-form-item>
         <el-form-item label="Interval" prop="trade_unit">
           <el-input v-model="temp.interval" />
+        </el-form-item>
+        <el-form-item label="MaShort" prop="ma_short">
+          <el-input v-model="temp.ma_short" />
+        </el-form-item>
+        <el-form-item label="MaLong" prop="ma_long">
+          <el-input v-model="temp.ma_long" />
         </el-form-item>
         <el-form-item label="AtrLen" prop="atr_len">
           <el-input v-model="temp.atr_len" />
