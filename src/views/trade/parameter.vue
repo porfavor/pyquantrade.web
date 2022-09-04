@@ -73,22 +73,22 @@
           <span>{{ row.over_buy }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AliveLine" width="100px" align="center">
+      <el-table-column label="AliveLine" width="120px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.alive_line }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="DeadLine" width="100px" align="center">
+      <el-table-column label="DeadLine" width="120px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.dead_line }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="OverSell" width="100px" align="center">
+      <el-table-column label="OverSell" width="120px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.over_sell }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="MinsMa" width="100px" align="center">
+      <el-table-column label="MinsMa" width="120px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.mins_ma }}</span>
         </template>
@@ -111,6 +111,11 @@
       <el-table-column label="XDXR" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.xdxr }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Update" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.update }}</span>
         </template>
       </el-table-column>
       <el-table-column label="Actions" align="center" width="230" class-name="small-padding fixed-width">
@@ -185,6 +190,9 @@
         </el-form-item>
         <el-form-item label="XDXR" prop="xdxr">
           <el-input v-model="temp.xdxr" />
+        </el-form-item>
+        <el-form-item label="Update" prop="update">
+          <el-input v-model="temp.update" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
