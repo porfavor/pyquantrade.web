@@ -35,6 +35,31 @@
           </div>
         </template>
       </el-table-column>
+      <el-table-column label="Open" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.open }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="AdjHigh" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.adj_high }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="AdjHigh" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.adj_high }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Converge" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.converge }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Diverge" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.diverge }}</span>
+        </template>
+      </el-table-column>
     </el-table>
 
     <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getList" />
