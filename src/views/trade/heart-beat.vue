@@ -45,9 +45,9 @@
           <span>{{ row.adj_high }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AdjHigh" width="80px" align="center">
+      <el-table-column label="AdjLow" width="80px" align="center">
         <template slot-scope="{row}">
-          <span>{{ row.adj_high }}</span>
+          <span>{{ row.adj_low }}</span>
         </template>
       </el-table-column>
       <el-table-column label="Converge" width="100px" align="center">
