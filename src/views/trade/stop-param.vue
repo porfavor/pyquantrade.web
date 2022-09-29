@@ -18,6 +18,21 @@
           <span class="link-type" @click="handleUpdate(row)">{{ row.code }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="PreOpen" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.switch_pre_open }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Phase1" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.switch_phase_1 }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Phase2" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.switch_phase_2 }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="StopAtrLen" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.stop_atr_len }}</span>
@@ -63,6 +78,15 @@
       <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="180px" style="width: 400px; margin-left:50px;">
         <el-form-item label="Code" prop="code">
           <el-input v-model="temp.code" disabled="true" />
+        </el-form-item>
+        <el-form-item label="PreOpen" prop="switch_pre_open">
+          <el-input v-model="temp.switch_pre_open" />
+        </el-form-item>
+        <el-form-item label="Phase1" prop="switch_phase_1">
+          <el-input v-model="temp.switch_phase_1" />
+        </el-form-item>
+        <el-form-item label="Phase2" prop="switch_phase_2">
+          <el-input v-model="temp.switch_phase_2" />
         </el-form-item>
         <el-form-item label="StopAtrLen" prop="stop_atr_len">
           <el-input v-model="temp.stop_atr_len" />
