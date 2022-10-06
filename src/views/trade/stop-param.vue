@@ -18,7 +18,7 @@
           <span class="link-type" @click="handleUpdate(row)">{{ row.code }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="PreOpen" width="80px" align="center">
+      <el-table-column label="PreOpen" width="90px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.switch_pre_open }}</span>
         </template>
@@ -31,6 +31,11 @@
       <el-table-column label="Phase2" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.switch_phase_2 }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="PosControl" width="500px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.pos_control }}</span>
         </template>
       </el-table-column>
       <el-table-column label="StopAtrLen" width="100px" align="center">
@@ -87,6 +92,9 @@
         </el-form-item>
         <el-form-item label="Phase2" prop="switch_phase_2">
           <el-input v-model="temp.switch_phase_2" />
+        </el-form-item>
+        <el-form-item label="PosControl" prop="pos_control">
+          <el-input v-model="temp.pos_control" />
         </el-form-item>
         <el-form-item label="StopAtrLen" prop="stop_atr_len">
           <el-input v-model="temp.stop_atr_len" />
