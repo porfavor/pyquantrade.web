@@ -28,29 +28,44 @@
           <span>{{ row.port }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="UpThresh" width="100px" align="center">
+      <el-table-column label="UpThr" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.up_thresh }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="DownThresh" width="110px" align="center">
+      <el-table-column label="DownTh" width="90px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.down_thresh }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Sequence" width="100px" align="center">
+      <el-table-column label="SeqS" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.sequence }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Predict" width="80px" align="center">
+      <el-table-column label="PredS" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.predict }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Model" width="280px" align="center">
+      <el-table-column label="ModelS" width="240px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.model }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="SeqL" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.seq_long }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="PredL" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.pred_long }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="ModelL" width="240px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.model_long }}</span>
         </template>
       </el-table-column>
       <el-table-column label="Index_1" width="80px" align="center">
@@ -68,7 +83,7 @@
           <span>{{ row.predict_idx1 }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="ModelIdx1" width="280px" align="center">
+      <el-table-column label="ModelIdx1" width="240px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.model_idx1 }}</span>
         </template>
@@ -88,7 +103,7 @@
           <span>{{ row.predict_idx2 }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="ModelIdx2" width="280px" align="center">
+      <el-table-column label="ModelIdx2" width="240px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.model_idx2 }}</span>
         </template>
@@ -115,10 +130,10 @@
         <el-form-item label="Port" prop="port">
           <el-input v-model="temp.port" />
         </el-form-item>
-        <el-form-item label="UpThresh" prop="up_thresh">
+        <el-form-item label="UpThr" prop="up_thresh">
           <el-input v-model="temp.up_thresh" />
         </el-form-item>
-        <el-form-item label="DownThresh" prop="down_thresh">
+        <el-form-item label="DownThr" prop="down_thresh">
           <el-input v-model="temp.down_thresh" />
         </el-form-item>
         <el-form-item label="Sequence" prop="sequence">
@@ -129,6 +144,15 @@
         </el-form-item>
         <el-form-item label="Model" prop="model">
           <el-input v-model="temp.model" />
+        </el-form-item>
+        <el-form-item label="Sequence" prop="seq_long">
+          <el-input v-model="temp.seq_long" />
+        </el-form-item>
+        <el-form-item label="Predict" prop="pred_long">
+          <el-input v-model="temp.pred_long" />
+        </el-form-item>
+        <el-form-item label="Model" prop="model_long">
+          <el-input v-model="temp.model_long" />
         </el-form-item>
         <el-form-item label="Index_1" prop="index_1">
           <el-input v-model="temp.index_1" />
