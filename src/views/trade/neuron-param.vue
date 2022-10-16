@@ -136,22 +136,22 @@
         <el-form-item label="DownThr" prop="down_thresh">
           <el-input v-model="temp.down_thresh" />
         </el-form-item>
-        <el-form-item label="Sequence" prop="sequence">
+        <el-form-item label="SeqS" prop="sequence">
           <el-input v-model="temp.sequence" />
         </el-form-item>
-        <el-form-item label="Predict" prop="predict">
+        <el-form-item label="PredS" prop="predict">
           <el-input v-model="temp.predict" />
         </el-form-item>
-        <el-form-item label="Model" prop="model">
+        <el-form-item label="ModelS" prop="model">
           <el-input v-model="temp.model" />
         </el-form-item>
-        <el-form-item label="Sequence" prop="seq_long">
+        <el-form-item label="SeqL" prop="seq_long">
           <el-input v-model="temp.seq_long" />
         </el-form-item>
-        <el-form-item label="Predict" prop="pred_long">
+        <el-form-item label="PredL" prop="pred_long">
           <el-input v-model="temp.pred_long" />
         </el-form-item>
-        <el-form-item label="Model" prop="model_long">
+        <el-form-item label="ModelL" prop="model_long">
           <el-input v-model="temp.model_long" />
         </el-form-item>
         <el-form-item label="Index_1" prop="index_1">
