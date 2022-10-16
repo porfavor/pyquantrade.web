@@ -48,6 +48,11 @@
           <span>{{ row.ma_long }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="Direction" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.direction }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="AtrLen" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_len }}</span>
@@ -151,6 +156,9 @@
         </el-form-item>
         <el-form-item label="MaLong" prop="ma_long">
           <el-input v-model="temp.ma_long" />
+        </el-form-item>
+        <el-form-item label="Direction" prop="direction">
+          <el-input v-model="temp.direction" />
         </el-form-item>
         <el-form-item label="AtrLen" prop="atr_len">
           <el-input v-model="temp.atr_len" />
