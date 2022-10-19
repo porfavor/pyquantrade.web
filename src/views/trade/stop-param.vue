@@ -33,9 +33,34 @@
           <span>{{ row.switch_phase_2 }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="PosControl" width="500px" align="center">
+      <el-table-column label="LongQuantity" width="120px" align="center">
         <template slot-scope="{row}">
-          <span>{{ row.pos_control }}</span>
+          <span>{{ row.long_quantity }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="LongHigh" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.long_high }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="LongStop" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.long_stop }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="ShortQuantity" width="120px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.short_quantity }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="ShortLow" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.short_low }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="ShortStop" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.short_stop }}</span>
         </template>
       </el-table-column>
       <el-table-column label="StopAtrLen" width="100px" align="center">
@@ -93,8 +118,23 @@
         <el-form-item label="Phase2" prop="switch_phase_2">
           <el-input v-model="temp.switch_phase_2" />
         </el-form-item>
-        <el-form-item label="PosControl" prop="pos_control">
-          <el-input v-model="temp.pos_control" />
+        <el-form-item label="LongQuantity" prop="long_quantity">
+          <el-input v-model="temp.long_quantity" />
+        </el-form-item>
+        <el-form-item label="LongHigh" prop="long_high">
+          <el-input v-model="temp.long_high" />
+        </el-form-item>
+        <el-form-item label="LongStop" prop="long_stop">
+          <el-input v-model="temp.long_stop" />
+        </el-form-item>
+        <el-form-item label="ShortQuantity" prop="short_quantity">
+          <el-input v-model="temp.short_quantity" />
+        </el-form-item>
+        <el-form-item label="ShortLow" prop="short_low">
+          <el-input v-model="temp.short_low" />
+        </el-form-item>
+        <el-form-item label="ShortStop" prop="short_stop">
+          <el-input v-model="temp.short_stop" />
         </el-form-item>
         <el-form-item label="StopAtrLen" prop="stop_atr_len">
           <el-input v-model="temp.stop_atr_len" />
