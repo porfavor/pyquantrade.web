@@ -23,11 +23,6 @@
           <span>{{ row.long_short }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AutoLS" width="80px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.auto_ls }}</span>
-        </template>
-      </el-table-column>
       <el-table-column label="ShareLimit" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.share_limit }}</span>
@@ -51,6 +46,11 @@
       <el-table-column label="MaLong" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.ma_long }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="AutoLS" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.auto_ls }}</span>
         </template>
       </el-table-column>
       <el-table-column label="Direction" width="100px" align="center">
@@ -147,9 +147,6 @@
         <el-form-item label="LongShort" prop="long_short">
           <el-input v-model="temp.long_short" />
         </el-form-item>
-        <el-form-item label="AutoLS" prop="auto_ls">
-          <el-input v-model="temp.auto_ls" />
-        </el-form-item>
         <el-form-item label="ShareLimit" prop="share_limit">
           <el-input v-model="temp.share_limit" />
         </el-form-item>
@@ -164,6 +161,9 @@
         </el-form-item>
         <el-form-item label="MaLong" prop="ma_long">
           <el-input v-model="temp.ma_long" />
+        </el-form-item>
+        <el-form-item label="AutoLS" prop="auto_ls">
+          <el-input v-model="temp.auto_ls" />
         </el-form-item>
         <el-form-item label="Direction" prop="direction">
           <el-input v-model="temp.direction" />
