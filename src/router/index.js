@@ -107,6 +107,18 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
+        path: 'position',
+        component: () => import('@/views/trade/position'),
+        name: 'Position',
+        meta: { title: 'Position', icon: 'list', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/trade',
+    component: Layout,
+    children: [
+      {
         path: 'parameter',
         component: () => import('@/views/trade/parameter'),
         name: 'Parameter',
@@ -135,18 +147,6 @@ export const asyncRoutes = [
         component: () => import('@/views/trade/stop-param'),
         name: 'StopParam',
         meta: { title: 'StopParam', icon: 'tree-table', affix: true }
-      }
-    ]
-  },
-  {
-    path: '/trade',
-    component: Layout,
-    children: [
-      {
-        path: 'position',
-        component: () => import('@/views/trade/position'),
-        name: 'Position',
-        meta: { title: 'Position', icon: 'list', affix: true }
       }
     ]
   },
