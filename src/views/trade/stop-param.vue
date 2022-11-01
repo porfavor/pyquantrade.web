@@ -43,6 +43,11 @@
           <span>{{ row.long_high }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="LongExit" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.long_exit }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="LongStop" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.long_stop }}</span>
@@ -56,6 +61,11 @@
       <el-table-column label="ShortLow" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.short_low }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="ShortExit" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.short_exit }}</span>
         </template>
       </el-table-column>
       <el-table-column label="ShortStop" width="100px" align="center">
@@ -124,6 +134,9 @@
         <el-form-item label="LongHigh" prop="long_high">
           <el-input v-model="temp.long_high" />
         </el-form-item>
+        <el-form-item label="LongExit" prop="long_exit">
+          <el-input v-model="temp.long_exit" />
+        </el-form-item>
         <el-form-item label="LongStop" prop="long_stop">
           <el-input v-model="temp.long_stop" />
         </el-form-item>
@@ -132,6 +145,9 @@
         </el-form-item>
         <el-form-item label="ShortLow" prop="short_low">
           <el-input v-model="temp.short_low" />
+        </el-form-item>
+        <el-form-item label="ShortExit" prop="short_exit">
+          <el-input v-model="temp.short_exit" />
         </el-form-item>
         <el-form-item label="ShortStop" prop="short_stop">
           <el-input v-model="temp.short_stop" />
