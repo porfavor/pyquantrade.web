@@ -131,10 +131,10 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
-        path: 'neuron-param',
-        component: () => import('@/views/trade/neuron-param'),
-        name: 'NeuronParam',
-        meta: { title: 'NeuronParam', icon: 'nested', affix: true }
+        path: 'stop-param',
+        component: () => import('@/views/trade/stop-param'),
+        name: 'StopParam',
+        meta: { title: 'StopParam', icon: 'tree-table', affix: true }
       }
     ]
   },
@@ -143,10 +143,10 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
-        path: 'stop-param',
-        component: () => import('@/views/trade/stop-param'),
-        name: 'StopParam',
-        meta: { title: 'StopParam', icon: 'tree-table', affix: true }
+        path: 'neuron-param',
+        component: () => import('@/views/trade/neuron-param'),
+        name: 'NeuronParam',
+        meta: { title: 'NeuronParam', icon: 'nested', affix: true }
       }
     ]
   },
