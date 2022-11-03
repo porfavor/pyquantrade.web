@@ -28,9 +28,14 @@
           <span>{{ row.share_limit }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="TradeUnit" width="100px" align="center">
+      <el-table-column label="TradeUnit" width="90px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.trade_unit }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="UnitCount" width="90px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.unit_count }}</span>
         </template>
       </el-table-column>
       <el-table-column label="Interval" width="80px" align="center">
@@ -152,6 +157,9 @@
         </el-form-item>
         <el-form-item label="TradeUnit" prop="trade_unit">
           <el-input v-model="temp.trade_unit" />
+        </el-form-item>
+        <el-form-item label="UnitCount" prop="unit_count">
+          <el-input v-model="temp.unit_count" />
         </el-form-item>
         <el-form-item label="Interval" prop="trade_unit">
           <el-input v-model="temp.interval" />
