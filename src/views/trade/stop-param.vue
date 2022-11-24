@@ -33,6 +33,16 @@
           <span>{{ row.switch_phase_2 }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="ExitRatio" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.exit_ratio }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="StopRatio" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.stop_ratio }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="LongQuantity" width="120px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.long_quantity }}</span>
@@ -127,6 +137,12 @@
         </el-form-item>
         <el-form-item label="Phase2" prop="switch_phase_2">
           <el-input v-model="temp.switch_phase_2" />
+        </el-form-item>
+        <el-form-item label="ExitRatio" prop="exit_ratio">
+          <el-input v-model="temp.exit_ratio" />
+        </el-form-item>
+        <el-form-item label="StopRatio" prop="stop_ratio">
+          <el-input v-model="temp.stop_ratio" />
         </el-form-item>
         <el-form-item label="LongQuantity" prop="long_quantity">
           <el-input v-model="temp.long_quantity" />
