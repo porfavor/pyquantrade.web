@@ -73,6 +73,11 @@
           <span>{{ row.atr_ratio }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="BaseAtr" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.base_atr_ratio }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="AtrUpper" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_upper_ratio }}</span>
@@ -181,6 +186,9 @@
         </el-form-item>
         <el-form-item label="AtrRatio" prop="atr_ratio">
           <el-input v-model="temp.atr_ratio" />
+        </el-form-item>
+        <el-form-item label="BaseAtr" prop="base_atr_ratio">
+          <el-input v-model="temp.base_atr_ratio" />
         </el-form-item>
         <el-form-item label="AtrUpper" prop="atr_upper_ratio">
           <el-input v-model="temp.atr_upper_ratio" />
@@ -346,7 +354,7 @@ export default {
           'background-color': '#ffe699',
           'border': '1px dashed #0F0A3B !important'
         }
-      } else if (row.column.label=== 'AtrRatio' || row.column.label=== 'AtrUpper' || row.column.label=== 'AtrLower') {
+      } else if (row.column.label=== 'AtrRatio' || row.column.label=== 'BaseAtr' || row.column.label=== 'AtrUpper' || row.column.label=== 'AtrLower') {
         return {
           'background-color': '#ddebf7',
           'border': '1px dashed #0F0A3B !important'
