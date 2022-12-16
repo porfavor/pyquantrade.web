@@ -53,17 +53,22 @@
           <span>{{ row.stop_profit }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="FilledDt" width="400px" align="center">
+      <el-table-column label="PosControl" width="300px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.pos_control }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="FilledDt" width="300px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.filled_dt }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="FilledDetail" width="400px" align="center">
+      <el-table-column label="FilledDetail" width="300px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.filled_detail }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="RecycleDetail" width="400px" align="center">
+      <el-table-column label="RecycleDetail" width="300px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.recycle_detail }}</span>
         </template>
@@ -109,6 +114,9 @@
         </el-form-item>
         <el-form-item label="StopProfit" prop="stop_profit">
           <el-input v-model="temp.stop_profit" />
+        </el-form-item>
+        <el-form-item label="PosControl" prop="pos_control">
+          <el-input v-model="temp.pos_control" />
         </el-form-item>
         <el-form-item label="FilledDt" prop="filled_dt">
           <el-input v-model="temp.filled_dt" />
