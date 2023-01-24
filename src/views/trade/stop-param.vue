@@ -33,6 +33,21 @@
           <span>{{ row.switch_phase_2 }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="Phase3" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.switch_phase_3 }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Phase4" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.switch_phase_4 }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Phase5" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.switch_phase_5 }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="ExitRatio" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.exit_ratio }}</span>
@@ -137,6 +152,15 @@
         </el-form-item>
         <el-form-item label="Phase2" prop="switch_phase_2">
           <el-input v-model="temp.switch_phase_2" />
+        </el-form-item>
+        <el-form-item label="Phase3" prop="switch_phase_3">
+          <el-input v-model="temp.switch_phase_3" />
+        </el-form-item>
+        <el-form-item label="Phase4" prop="switch_phase_4">
+          <el-input v-model="temp.switch_phase_4" />
+        </el-form-item>
+        <el-form-item label="Phase5" prop="switch_phase_5">
+          <el-input v-model="temp.switch_phase_5" />
         </el-form-item>
         <el-form-item label="ExitRatio" prop="exit_ratio">
           <el-input v-model="temp.exit_ratio" />
