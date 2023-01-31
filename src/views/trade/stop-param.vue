@@ -18,6 +18,16 @@
           <span class="link-type" @click="handleUpdate(row)">{{ row.code }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="BarSize" width="90px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.bar_size }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Offset" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.offset }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="PreOpen" width="90px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.switch_pre_open }}</span>
@@ -143,6 +153,12 @@
       <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="180px" style="width: 400px; margin-left:50px;">
         <el-form-item label="Code" prop="code">
           <el-input v-model="temp.code" disabled="true" />
+        </el-form-item>
+        <el-form-item label="BarSize" prop="bar_size">
+          <el-input v-model="temp.bar_size" />
+        </el-form-item>
+        <el-form-item label="Offset" prop="offset">
+          <el-input v-model="temp.offset" />
         </el-form-item>
         <el-form-item label="PreOpen" prop="switch_pre_open">
           <el-input v-model="temp.switch_pre_open" />
