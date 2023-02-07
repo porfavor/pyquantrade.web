@@ -38,7 +38,12 @@
           <span>{{ row.unit_count }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Interval" width="80px" align="center">
+      <el-table-column label="TradeGroup" width="105px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.trade_group }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Interval" width="75px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.interval }}</span>
         </template>
@@ -53,7 +58,7 @@
           <span>{{ row.ma_long }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AutoLS" width="80px" align="center">
+      <el-table-column label="AutoLS" width="75px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.auto_ls }}</span>
         </template>
@@ -63,7 +68,7 @@
           <span>{{ row.direction }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AtrLen" width="80px" align="center">
+      <el-table-column label="AtrLen" width="75px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_len }}</span>
         </template>
@@ -93,22 +98,22 @@
           <span>{{ row.over_buy }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AliveLine" width="120px" align="center">
+      <el-table-column label="AliveLine" width="110px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.alive_line }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="DeadLine" width="120px" align="center">
+      <el-table-column label="DeadLine" width="110px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.dead_line }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="OverSell" width="120px" align="center">
+      <el-table-column label="OverSell" width="110px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.over_sell }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="MinsMa" width="120px" align="center">
+      <el-table-column label="MinsMa" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.mins_ma }}</span>
         </template>
@@ -165,6 +170,9 @@
         </el-form-item>
         <el-form-item label="UnitCount" prop="unit_count">
           <el-input v-model="temp.unit_count" />
+        </el-form-item>
+        <el-form-item label="TradeGroup" prop="trade_group">
+          <el-input v-model="temp.trade_group" />
         </el-form-item>
         <el-form-item label="Interval" prop="trade_unit">
           <el-input v-model="temp.interval" />
