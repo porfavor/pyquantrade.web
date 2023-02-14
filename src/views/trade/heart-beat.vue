@@ -50,14 +50,29 @@
           <span>{{ row.adj_low }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Converge" width="100px" align="center">
+      <el-table-column label="Converge" width="90px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.converge }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Diverge" width="100px" align="center">
+      <el-table-column label="Diverge" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.diverge }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Style" width="180px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.style }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="StyleIndex1" width="180px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.style_idx1 }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="StyleIndex2" width="180px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.style_idx2 }}</span>
         </template>
       </el-table-column>
     </el-table>
