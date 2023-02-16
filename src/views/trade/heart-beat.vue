@@ -65,9 +65,19 @@
           <span>{{ row.style }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="Index_1" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.index_1 }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="StyleIndex1" width="180px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.style_idx1 }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Index_2" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.index_2 }}</span>
         </template>
       </el-table-column>
       <el-table-column label="StyleIndex2" width="180px" align="center">
