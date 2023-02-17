@@ -18,7 +18,7 @@
           <span class="link-type" @click="handleUpdate(row)">{{ row.code }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="LongShort" width="100px" align="center">
+      <el-table-column label="LongShort" width="95px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.long_short }}</span>
         </template>
@@ -63,7 +63,7 @@
           <span>{{ row.auto_ls }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Direction" width="100px" align="center">
+      <el-table-column label="Direction" width="85px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.direction }}</span>
         </template>
@@ -73,22 +73,29 @@
           <span>{{ row.atr_len }}</span>
         </template>
       </el-table-column>
+      <!---
       <el-table-column label="AtrRatio" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_ratio }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="BaseAtr" width="80px" align="center">
+      --->
+      <el-table-column label="BaseUpper" width="100px" align="center">
         <template slot-scope="{row}">
-          <span>{{ row.base_atr_ratio }}</span>
+          <span>{{ row.base_upper_ratio }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AtrUpper" width="100px" align="center">
+      <el-table-column label="BaseLower" width="100px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.base_lower_ratio }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="AtrUpper" width="95px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_upper_ratio }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="AtrLower" width="100px" align="center">
+      <el-table-column label="AtrLower" width="95px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.atr_lower_ratio }}</span>
         </template>
@@ -192,11 +199,16 @@
         <el-form-item label="AtrLen" prop="atr_len">
           <el-input v-model="temp.atr_len" />
         </el-form-item>
+        <!---
         <el-form-item label="AtrRatio" prop="atr_ratio">
           <el-input v-model="temp.atr_ratio" />
         </el-form-item>
-        <el-form-item label="BaseAtr" prop="base_atr_ratio">
-          <el-input v-model="temp.base_atr_ratio" />
+        --->
+        <el-form-item label="BaseUpper" prop="base_upper_ratio">
+          <el-input v-model="temp.base_upper_ratio" />
+        </el-form-item>
+        <el-form-item label="BaseLower" prop="base_lower_ratio">
+          <el-input v-model="temp.base_lower_ratio" />
         </el-form-item>
         <el-form-item label="AtrUpper" prop="atr_upper_ratio">
           <el-input v-model="temp.atr_upper_ratio" />

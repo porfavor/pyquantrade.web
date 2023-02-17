@@ -60,7 +60,7 @@
           <span>{{ row.diverge }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Style" width="180px" align="center">
+      <el-table-column label="Style" width="200px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.style }}</span>
         </template>
@@ -70,7 +70,7 @@
           <span>{{ row.index_1 }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="StyleIndex1" width="180px" align="center">
+      <el-table-column label="StyleIndex1" width="200px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.style_idx1 }}</span>
         </template>
@@ -80,7 +80,7 @@
           <span>{{ row.index_2 }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="StyleIndex2" width="180px" align="center">
+      <el-table-column label="StyleIndex2" width="200px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.style_idx2 }}</span>
         </template>
