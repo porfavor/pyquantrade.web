@@ -60,9 +60,14 @@
           <span>{{ row.diverge }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Style" width="200px" align="center">
+      <el-table-column label="StyleShort" width="200px" align="center">
         <template slot-scope="{row}">
-          <span>{{ row.style }}</span>
+          <span>{{ row.style_short }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="StyleLong" width="200px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.style_long }}</span>
         </template>
       </el-table-column>
       <el-table-column label="Index_1" width="80px" align="center">
