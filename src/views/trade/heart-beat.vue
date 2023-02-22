@@ -18,12 +18,12 @@
           <span>{{ row.code }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Price" width="100px" align="center">
+      <el-table-column label="Price" width="80px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.price }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Beat" width="200px" align="center">
+      <el-table-column label="Beat" width="160px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.beat }}</span>
         </template>
@@ -35,27 +35,12 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column label="Open" width="80px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.open }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="AdjHigh" width="80px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.adj_high }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="AdjLow" width="80px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.adj_low }}</span>
-        </template>
-      </el-table-column>
       <el-table-column label="Converge" width="90px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.converge }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Diverge" width="80px" align="center">
+      <el-table-column label="Diverge" width="75px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.diverge }}</span>
         </template>
@@ -88,6 +73,21 @@
       <el-table-column label="StyleIndex2" width="200px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.style_idx2 }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Open" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.open }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="AdjHigh" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.adj_high }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="AdjLow" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>{{ row.adj_low }}</span>
         </template>
       </el-table-column>
     </el-table>
